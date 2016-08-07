@@ -1,0 +1,181 @@
+<html>
+<title> 
+OnScreen Help 
+</title> 
+<head>
+
+<style> 
+
+
+body { 
+ 
+ background-color: grey; 
+
+ 
+} 
+
+
+h1 { 
+   color: black; 
+ 
+} 
+
+
+h2 { 
+ color: Purple;
+ 
+ 
+}
+
+h3 { 
+  color: Orange;
+ 
+} 
+
+p {
+ 
+ color: black; 
+ font-family :Arial ;
+ font-size: 15px ;
+}
+ul {
+ color: black;
+ font-family: Arial; 
+ font-size: 15.5px;
+}
+
+ 
+
+
+h4 { 
+ color: Blue;
+} 
+ 
+ h5 { 
+  font-size: 15px;
+  
+ }
+</style>
+ </head>
+ 
+ 
+ 
+ 
+ 
+<body> 
+
+
+
+
+
+<h1> Welcome to the help screen.</h1>
+
+
+<h5> The Purpose of the soundboard   </h5>
+<p5>  The main purpose of the sound board is for small  theatre because they might not have have enough money to afford a live band. But this program can be any day use.                                </p5>
+
+
+
+<h2><bold>  How to use it</bold>  </h2>
+<p> To start the Sound Board, you need to put your mouse/ finger over the button of choice. When you have pressed the button 
+it will play a unique sound for 3 seconds long.</p> 
+
+<p> Each button will have a label on it, example of this a button having a dog bark on it so when you click the button it will play that sound.
+Also each button might have an unique colour to show off what each button will repersent, this will only show up when your mouse is hovered over the button.
+Example of this will be Gun shot and that will be a redish colour to show that it's bad and red is normally used to for anything bad or evil. 
+</p>
+
+
+<p>  
+Some of the sounds are loud so you might need to change you audio setting, to do this you go down to the bottom right coner and click on the audio icon and lower or higher the sound. 
+</p>
+<H3><bold> How to get back on to the Sound board </bold>  </H3>
+<p> To go back onto the sound board, there is 2 different ways to go back onto the soundbaord.  </p>
+<ul> First way to go back onto the Sound Board is to click on the back arrow in the Top left coner and this will just go back on the sound board. 
+The Second way to go back onto the Sound Board then you just need to click on the back button that is just at the bottom of the page. 
+
+</ul>
+<H4><bold> what systems can use the Sound Board </bold> </H4>
+<p> The minimum specs are windows XP  32 Bit. Also mobile phones Samsung,Apple and Windows phone.  </p>
+
+
+</body> 
+
+
+<canvas id= "myCanvas" width= "100" height= "100" style= "border:0px solid #d3d3d3;"> 
+Your browser does not support the HTML5 Canvas tag.</canvas>
+
+<p id = "Button"></p> 
+<script> 
+
+/* canvas variables */
+var c = document.getElementById("myCanvas");
+var ctx = c.getContext("2d");
+
+ 
+
+
+var Back_1 = document.createElement("Button");
+
+
+
+ function  BackButton(){
+ this.width = Back_1.style.width = "100px";
+ this.height = Back_1.style.height = "100px";
+ this.position = Back_1.style.position = "absolute"; 
+ this.vertical = Back_1.style.left = "700px"; 
+ this.horizontal = Back_1.style.top = "600px";
+ this.hoverEffect = Back_1.onmouseover = function () {mouseoverBack1 ()};
+ this.hoverEffectout = Back_1.onmouseout = function () {mouseoutBack1()}; 
+
+  
+    this.BackButton1 = function ()
+  {
+       
+     var B1 = document.createTextNode("Back");
+     Back_1.appendChild(B1);
+     document.body.appendChild(Back_1);
+     console.log("this works"); 
+     }
+     
+    function mouseoverBack1() { 
+     Back_1.style.backgroundColor =  "Blue"; 
+    Back_1.style.borderColor = "Blue";  
+    }
+    function mouseoutBack1 () {
+    Back_1.style.backgroundColor = "";
+    Back_1.style.borderColor = ""; 
+    }
+    
+     var onClick_Back = function()
+ {
+   window.location.href = "Soundboard.html";
+ 
+ } 
+ Back_1.addEventListener("click", onClick_Back, false); 
+    
+    
+    
+ }
+ 
+  
+		var SoundeffectB =  new BackButton();
+	 c.innerHTML = SoundeffectB.BackButton1();
+	  
+	  
+	  
+
+
+
+
+	 
+
+	  
+    
+ 
+
+
+
+</script> 
+
+</html>

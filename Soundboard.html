@@ -1,0 +1,216 @@
+<html>
+
+<head>
+
+<link rel="stylesheet" type="text/css" href="soundboard.css">
+</head>
+
+<body>
+    
+<h1> </h1>
+<canvas id= "myCanvas" width= "1000" height= "1000" style= "border:1px solid #d3d3d3;"> 
+Your browser does not support the HTML5 Canvas tag.</canvas>
+
+<p id="Button"></p> 
+
+
+
+
+<script>
+
+/* canvas variables */
+var c = document.getElementById("myCanvas");
+var ctx = c.getContext("2d");
+ctx.fillStyle =  "#ffcccc ";
+ctx.fillRect(0,0,50000, 10000);
+/*  This is making the parent class so I can inhencerance to make the child classes   */ 
+  function button(width, height, position, left, top, audioSound) 
+            {
+                
+                /*This is used to make the button .*/
+                var BT = document.createElement("BUTTON");
+                document.body.appendChild(BT);
+                
+                /* this is used to Import the  audio files for my soundboard.*/
+                var audioS = new Audio(audioSound);
+                
+                /*this is playing the sound when being clicked.*/
+                BT.onclick = function()
+                {
+                    audioS.play();
+                }
+				
+				
+				/* This is used for the position, width,height, left and top */ 
+			  BT.style.width = width; 
+              BT.style.height = height;
+              BT.style.position = position;
+              BT.style.left = left;
+              BT.style.top = top;
+                
+	  }
+	  
+	  /*This is getting  the sound for by using varibles */ 
+	    var storm = new Audio("Thunder.mp3");
+                var crowd_cheering = new Audio("Crowd_Cheering.mp3");
+                var booing = new Audio("Crowd_Booing.mp3");
+                var Exploding = new Audio("Explosion.mp3");
+                var Rain = new Audio("Light_Rain.mp3");
+                var Crowd_Chatter = new Audio("Crowd_Chatter.mp3");
+                var Drums = new Audio("Drums.mp3");
+                var Bird = new Audio("Small_Bird_Chirping.mp3");
+                var Opening_Door  = new Audio("Door_creeping.mp3"); 
+				
+				function bgroundtext ( text, fontTop, fontLeft)
+				{
+				var backgroundT = document.createElement("u");
+				var uText = document.createTextNode(text);
+				
+				backgroundT.appendChild(uText);
+				document.body.appendChild(backgroundT);
+				
+				/*The function BgroundText is the attributes  */
+				 backgroundT.style.color = "black";
+                backgroundT.style.fontFamily = "Calibri";
+                backgroundT.style.fontSize = "22px";
+                backgroundT.style.fontWeight = "Bold";
+                backgroundT.style.fontVariant = "small-caps";
+                backgroundT.style.position = "absolute";
+                backgroundT.style.top = fontTop;
+                backgroundT.style.left = fontLeft;
+                backgroundT.style.zIndex = "2"; 
+				
+				
+				}
+				/* This is using the background text for the child classes  */ 
+			var buttonText = new bgroundtext("Storm", "250px", "385px");
+
+            var buttonText2  = new bgroundtext("Crowd_Cheering", "250px", "565px");
+			
+			var buttonText3 = new bgroundtext("Booing", "250px", "835px");
+				
+			var buttonText4 = new bgroundtext("Exploding", "460px", "380px");
+            
+			var buttonText5 = new bgroundtext ("Rain", "460px", "590px");
+			
+			 var buttonText6 = new bgroundtext ("Crowd_Chatter", "460px", "825px");
+			 
+				
+
+			var buttonText7 = new bgroundtext ("Drums", "670px", "375px");	
+				
+				
+			 var buttonText8 = new bgroundtext ("Bird", "670px", "615px");
+
+
+			var buttonText9	= new bgroundtext (" Opening_Door", "670px", " 820px");
+			
+			/*button for the child classes and it will create the buttons from using inhencerance */ 
+			
+			/*Button one is for thunder button */ 
+			
+			var buttonOne = new button( "170px", "160px", "absolute", "320px", "210px", "Thunder.mp3");
+			
+			/*Button Two  is for Crowd Cheering  button */ 
+			var buttonTwo = new button( "170px", "160px", "absolute", "550px", "210px", "Crowd_Cheering.mp3");
+			
+			/*Button Two  is for crowd booing  button */ 
+		  
+			var buttonThree = new button( "170px", "160px", "absolute", "780px", "210px", "Crowd_Booing.mp3");
+			
+			/*Button Four is for Explosion button  */ 
+			
+			var buttonFour = new button( "170px", "160px", "absolute", "320px", "424px", "Explosion.mp3");
+			
+			/*Button Five  is for Light rain  button */ 
+
+			var buttonFive = new button( "170px", "160px", "absolute", "550px", "424px", "Light_Rain.mp3");
+			
+			/*Button Six is for Crowd Chatter  button */ 
+			
+			var buttonSix = new button( "170px", "160px", "absolute", "790px", "424px", " Crowd_Chatter.mp3  ");
+			/*Button Seven  is for Drums   button */ 
+			
+			var buttonSeven = new button( "170px", "160px", "absolute", "320px", "650px", "Drums.mp3");
+			
+			
+			/*Button Eight  is for  Small bird Chirping   button */ 
+			 
+			var buttonEight = new button ("170px", "160px", "absolute", "550px", "650px");
+			
+			/*Button Nine  is for Door_creeping button */ 
+			var buttonNine =   new button( "170px", "160px", "absolute", "790px", "650px", "Door_creeping.mp3");
+				
+				
+				
+				
+				
+				
+				
+				var Helpbutton_1 = document.createElement("Button"); 
+	
+	
+
+ 
+	 
+	 
+	  function Helpbutton1 () {
+	 
+	  this.width = Helpbutton_1.style.width = "150px";
+    this.height = Helpbutton_1.style.height = "150px";
+    this.position = Helpbutton_1.style.position ="absolute";
+    this.vertical = Helpbutton_1.style.left = "340px";
+    this.horizontal = Helpbutton_1.style.top = "860px"; 
+    this.hoverEffect  = Helpbutton_1.onmouseover = function() {mouseoverH1()}; 
+    this.hoverEffectout = Helpbutton_1.onmouseout = function () {mouseoutH1  ()};
+      
+      
+      
+    this.HelpB1 = function () 
+    {
+    
+    var Hb1 = document.createTextNode("Help");
+   Helpbutton_1.appendChild(Hb1);
+    document.body.appendChild(Helpbutton_1);
+   console.log("1,2,3");
+   
+   
+   
+  
+    }
+     function mouseoverH1  () { 
+    Helpbutton_1.style.backgroundColor =  "#68228B"; 
+    Helpbutton_1.style.borderColor = "#68228B";  
+    
+    }              
+    function mouseoutH1  () {
+    Helpbutton_1.style.backgroundColor = "";
+    Helpbutton_1.style.borderColor = ""; 
+    }
+	
+	var onClick_H = function (){
+     window.location.href = "Help.html"; 
+	 
+        }
+     
+	 
+	Helpbutton_1.addEventListener("click", onClick_H, false);  
+	  
+    
+  }
+  
+     /*
+	This start implementing the whole button because this is to well look at the function Helpbutton1  and also 
+	calling up the function called HelpB1 . The var Soundeffect4 is used to make the button  
+	*/
+  
+		var Soundeffect4 =  new Helpbutton1();
+	  c.innerHTML = Soundeffect4.HelpB1();  
+				
+	 /*Sound Board By Jon Barton
+Date 08/06/16   
+*/  
+</script>
+
+</body>
+</html>
